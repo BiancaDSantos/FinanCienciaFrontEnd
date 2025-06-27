@@ -1,4 +1,8 @@
-//  procurar, buscar um, SÓ TIPO GET
+/**
+ * Responsabilidade: É o "mediador" entre a lógica da aplicação 
+ * e a API para um recurso específico (no caso, projetos). 
+ * Ele centraliza todas as operações de CRUD (Criar, Ler, Atualizar, Deletar) relacionadas a projetos.
+ */
 
 import api from './api';
 
