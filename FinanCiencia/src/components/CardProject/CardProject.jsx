@@ -1,4 +1,5 @@
 import React from 'react';
+import './CardProjeto.css';
 
 const Card = ({ children }) => {
     return (
