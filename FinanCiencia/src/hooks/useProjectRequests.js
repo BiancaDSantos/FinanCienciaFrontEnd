@@ -9,7 +9,7 @@ const useProjectActions = () => {
 
   const handleVisualizeProject = async (id) => {
     try {
-      const response = await projectService.getProjectDetails(id);
+      const response = await projectRequest.getProjectDetails(id);
       setSelectedProject(response.data);
       setIsDetailsModalOpen(true);
     } catch (error) {
@@ -28,7 +28,7 @@ const useProjectActions = () => {
   const handleSearchProjects = async (title) => {
     setLastSearchQuery(title); // Guarda a última busca, útil para recarregar
     try {
-      const response = await projectService.searchProjects(title);
+      const response = await projectRequest.searchProjects(title);
       return response.data; // Retorna os dados para o componente pai
     } catch (error) {
       console.error("Erro ao buscar o projeto:", error);
