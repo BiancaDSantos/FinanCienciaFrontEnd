@@ -1,0 +1,92 @@
+.project-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Exemplo de grid responsivo */
+    gap: 30px;
+    /* Espaçamento entre os cards */
+    padding: 40px;
+    /* Preenchimento ao redor da lista */
+    max-width: 1200px;
+    /* Largura máxima do container */
+    margin: 40px auto;
+    /* Centraliza o container */
+    justify-content: center;
+    /* Centraliza os itens no grid */
+}
+
+.no-projects-message {
+    text-align: center;
+    color: #48d1cc;
+    font-size: 1.2em;
+    padding: 50px;
+    grid-column: 1 / -1;
+    /* Ocupa toda a largura do grid */
+}
+
+/* Estilos básicos para o CardProject, se não tiverem em CardProject.css */
+.card-project {
+    background-color: #0f1628;
+    border: 1px solid #48d1cc;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.05s ease-in-out, box-shadow 0.05s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Para empurrar o footer para baixo */
+}
+
+.card-project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.card-header {
+    background-color: #48d1cc;
+    color: #0a0f1e;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-bottom: 1px solid #0a0f1e;
+}
+
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    /* Permite que o corpo ocupe o espaço disponível */
+    text-align: left;
+    color: #b0e0e6;
+    /* Cor mais clara para o texto do corpo */
+}
+
+.card-body p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.card-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #48d1cc;
+    background-color: rgba(15, 22, 40, 0.8);
+}
+
+.card-footer button {
+    padding: 10px 20px;
+    background-color: #48d1cc;
+    color: #0a0f1e;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    width: auto;
+    /* Anula o width: 100% que pode vir do App.css */
+}
+
+.card-footer button:hover {
+    background-color: #66ffe8;
+}

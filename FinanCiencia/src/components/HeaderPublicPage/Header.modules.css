@@ -1,0 +1,72 @@
+/* Conteúdo de header e .navbar de style.css vai aqui */
+header {
+    background: linear-gradient(135deg, #0f1628 30%, #48d1cc 100%);
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    position: relative;
+    animation: headerAnimation 1s ease-out;
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar-nav { /* Mudado de .navbar para .navbar-nav para corresponder ao HTML */
+    display: flex;
+    gap: 25px;
+    font-size: 18px;
+    list-style: none; /* Adicionado para remover marcadores de lista */
+    padding: 0; /* Adicionado para remover padding padrão */
+}
+
+.navbar-nav a {
+    color: #0a0f1e;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    text-shadow: 0 0 15px rgba(72, 209, 204, 0.7);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    transform: scale(1.1);
+    color: #66ffe8;
+}
+
+#buscarInput {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos para o ButtonSearch, se necessário overrides, caso contrário, o CSS dele já é importado */
+/* .retractable-search-container { ... } */
+/* .search-toggle-button { ... } */
+/* .search-input-form { ... } */
+/* .search-input-field { ... } */
+/* .submit-search-button { ... } */
+
+@media (max-width: 768px) {
+    .navbar-nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    #buscar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
