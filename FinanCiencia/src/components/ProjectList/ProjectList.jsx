@@ -1,23 +1,31 @@
 import React from 'react';
-import CardProject from '../CardProject/CardProject'; // Importe o componente CardProject
-import './ProjectList.css'; // Crie este CSS para o grid de cards
+import ProjectCard from '../ProjectCard/ProjectCard';
+import styles from './ProjectList.module.css';
 
-function ProjectList({ projects, onVisualize }) { // Renomeado de ProjectTable para ProjectList para melhor semântica
-    return (
-        <div className="project-list-container"> {/* Novo container para os cards */}
-            {projects.length > 0 ? (
-                projects.map(projeto => (
-                    <CardProject
-                        key={projeto.id}
-                        project={projeto}
-                        onVisualize={onVisualize}
-                    />
-                ))
-            ) : (
-                <p className="no-projects-message">Nenhum projeto encontrado.</p>
-            )}
-        </div>
-    );
+/**
+ * Renderiza uma grade de ProjectCards.
+ * @param {{ projects: any[], loading: boolean, error: any }} props
+ */
+function ProjectList({ projects, loading, error }) {
+  if (loading) {
+    return <p className={styles.message}>Carregando projetos...</p>;
+  }
+
+  if (error) {
+    return <p className={styles.message}>Ocorreu um erro ao buscar os projetos. Tente novamente.</p>;
+  }
+
+  if (!projects || projects.length === 0) {
+    return <p className={styles.message}>Nenhum projeto encontrado.</p>;
+  }
+
+  return (
+    <div className={styles.listContainer}>
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </div>
+  );
 }
 
 export default ProjectList;

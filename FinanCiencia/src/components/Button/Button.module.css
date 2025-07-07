@@ -1,0 +1,41 @@
+/* Estilo principal para o botão/link */
+.botao {
+  display: inline-block;
+  padding: 0.75rem 1.5rem; /* Espaçamento interno */
+  border: 1px solid transparent;
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none; /* Remove sublinhado de links */
+  cursor: pointer;
+  
+  /* Cores e transições */
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  /* Sombra para dar um efeito de elevação */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito ao passar o mouse por cima */
+.botao:hover:not(:disabled) {
+  background-color: #0056b3; /* Um azul mais escuro */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Efeito ao clicar */
+.botao:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para quando o botão estiver desabilitado */
+.botao:disabled {
+  background-color: #c0c0c0;
+  color: #6c757d;
+  cursor: not-allowed;
+  box-shadow: none;
+}

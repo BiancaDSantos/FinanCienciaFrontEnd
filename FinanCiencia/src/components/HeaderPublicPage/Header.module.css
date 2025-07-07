@@ -1,0 +1,55 @@
+/* Estilo principal para o cabeçalho moderno */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* Espaçamento interno (vertical e horizontal) */
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil para dar profundidade */
+  position: sticky; /* Mantém o header fixo no topo ao rolar */
+  top: 0;
+  z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+}
+
+/* Estilo para o link que envolve o logo */
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 200px;
+  }
+}
+
+/* Efeito de transição suave no logo ao passar o mouse */
+.logoLink svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+.logoLink:hover svg {
+    transform: scale(1.05);
+}
+
+/* Container para os botões de ação à direita */
+.actions {
+  display: grid;
+  align-self: end;
+  align-items: center;
+  gap: 1rem; /* Espaçamento entre os botões */
+}
+
+/* Media Query para telas menores (ex: celulares) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Empilha o logo e as ações verticalmente */
+    padding: 1rem;
+    gap: 1rem; /* Adiciona espaço entre o logo e as ações */
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

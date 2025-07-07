@@ -1,0 +1,46 @@
+.footer {
+  background-color: #f8f9fa; /* Um cinza bem claro, consistente com o header */
+  border-top: 1px solid #e9ecef;
+  padding: 2rem;
+  margin-top: auto; /* Empurra o rodapé para o final da página */
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que o conteúdo quebre em telas menores */
+  gap: 1rem;
+}
+
+.copyrightText {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialLinks a {
+  color: #6c757d;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.socialLinks a:hover {
+  color: #007bff; /* Azul primário ao passar o mouse */
+  transform: scale(1.1);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

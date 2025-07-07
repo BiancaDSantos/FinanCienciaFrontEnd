@@ -1,0 +1,14 @@
+.listContainer {
+  display: grid;
+  /* Cria colunas responsivas: 1 em telas pequenas, 2 em médias, 3 em grandes */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6c757d;
+  padding: 3rem;
+}

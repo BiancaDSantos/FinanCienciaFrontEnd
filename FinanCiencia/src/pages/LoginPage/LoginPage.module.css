@@ -1,0 +1,79 @@
+.loginContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.loginBox {
+  position: relative;
+  z-index: 10;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  margin: 150px auto;
+  text-align: center;
+}
+
+.logo{
+    width: 250px;
+}
+
+.form{
+    font-family: sans-serif;
+}
+
+.formGroup {
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding: 15px;
+}
+
+.email{
+    margin-bottom: 20px;
+    
+    label {
+        margin-right: 10px;
+    }
+
+    input {
+        padding: 2px;
+    }
+    
+    
+}
+
+.senha {
+    margin-bottom: 20px;
+
+    label {
+        margin-right: 10px;
+    }
+
+    
+    input {
+        padding: 2px;
+    }
+}
+
+
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: #000;
+  clip-path: url(#wavePath); /* Usando SVG para a forma da onda */
+  transform: translateY(100%);
+  transition: transform 1.5s ease-out;
+}
+
+.login-container.wave-active .wave {
+  transform: translateY(0);
+  height: 100%;
+}

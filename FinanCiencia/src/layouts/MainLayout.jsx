@@ -1,5 +1,5 @@
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../components/HeaderPublicPage/HeaderPublicPage.jsx';
+import Footer from '../components/FooterMain/FooterMain.jsx';
 
 const MainLayout = ({ children }) => {
     return (

@@ -1,38 +1,26 @@
-import './App.css'
-import MainLayout from './layouts/MainLayout'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext.jsx';
+import LoginPage from './pages/LoginPage/LoginPage.jsx';
+import AdministrationPage from './pages/AdministrationPage/AdministrationPage.jsx';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (
-    <MainLayout>
-      <Header onSearch={handleHeaderSearch} />
-      <div>
-        {/* Altere de ProjectTable para ProjectList */}
-        <ProjectList projects={projects} onVisualize={handleVisualizeProject} />
+   <AuthProvider>
+      <Router>
+        <Routes>
+          {/* --- Rotas Públicas --- */}
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
+          {/* --- Fim das Rotas Públicas --- */}
 
-        {/* Modais existentes */}
-        {selectedProject && (
-          <ProjectDetailsDialog
-            isOpen={isDetailsModalOpen}
-            onClose={handleCloseDetailsModal}
-            project={selectedProject}
-            onSupport={handleApoiarProjeto}
-          />
-        )}
-
-        <SupporterFormDialog
-          isOpen={isSupporterFormDialogOpen}
-          onClose={() => setIsSupporterFormDialogOpen(false)}
-          onSend={handleSendSupporterForm}
-        />
-
-        <AlertDialog
-          isOpen={isAlertDialogOpen}
-          onClose={handleCloseAlertDialog}
-          title={alertMessage.title}
-          body={alertMessage.body}
-        />
-      </div>
-    </MainLayout>
+          {/* --- Rotas Privadas --- */}
+          <Route path="/AdministrationPage" element={<AdministrationPage/>} />
+          {/* --- Fim das Rotas Privadas --- */}
+        </Routes>
+      </Router>
+   </AuthProvider>
   );
 }
 

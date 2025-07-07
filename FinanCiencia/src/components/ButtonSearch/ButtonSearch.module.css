@@ -1,0 +1,70 @@
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.searchButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.searchButton:hover {
+  transform: scale(1.1);
+  color: #007bff;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 0;
+  padding: 0.6rem 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  opacity: 0;
+  transition: width 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.4s ease-in-out, border-color 0.2s;
+}
+
+.searchContainer.open .searchInput {
+  width: 220px;
+  opacity: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* --- NOVO: Estilos para o tratamento de erro --- */
+
+/* Estilo para o campo de busca quando há um erro (input vazio) */
+.searchInput.error {
+  border-bottom-color: #dc3545; /* Vermelho para indicar erro */
+  animation: shake 0.5s;
+}
+
+/* Animação de "tremor" para o erro */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
